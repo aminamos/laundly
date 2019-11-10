@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pickup: 2019-11-09 21:07:09
+  weight: 1
+  paid: false
+  status: MyString
+
+two:
+  pickup: 2019-11-09 21:07:09
+  weight: 1
+  paid: false
+  status: MyString

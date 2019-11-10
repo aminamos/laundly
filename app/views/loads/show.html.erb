@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pickup:</strong>
+  <%= @load.pickup %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @load.weight %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @load.paid %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @load.status %>
+</p>
+
+<%= link_to 'Edit', edit_load_path(@load) %> |
+<%= link_to 'Back', loads_path %>
