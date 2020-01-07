@@ -24,10 +24,6 @@ User can select a laundromat and order a pickup
 
 Laundromat owner can set the status a load of laundry as collected, processed, and on the way to be returned
 
-- [ ] make an order status table (status:string)
-
-- [ ] have a form to change order status
-
 Laundromat owner can see all of processed and current loads of laundry
 - [ ] owner show page for store should show orders and order details for each store
 

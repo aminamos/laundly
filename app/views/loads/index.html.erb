@@ -22,7 +22,10 @@
         <td><%= load.status %></td>
         <td><%= link_to 'Show', load %></td>
         <td><%= link_to 'Edit', edit_load_path(load) %></td>
-        <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.role_id == 1%>
+        <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
