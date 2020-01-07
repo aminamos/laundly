@@ -18,12 +18,8 @@ Laundromat owner can enter details about their business including an address
 - [ ] add owner id to store table via migration. if owner id is in the store table as foreign key, show store. Otherwise show nothing
 
 Laundromat owner can enter their time availability for pickup
-- [ ] make store_availability table, columns store_id, availability_id
-- [ ] store has_many availabilities through above table, availability has_many stores through above table
-- [ ] make drop-down for the store that availability applies to
 
 User can select a laundromat and order a pickup
-- [ ] new table: orders (columns = user_id, store_id, availability_id, weight, status=null, user phone number)
 - [ ] the new order page should have a form for submitting the order
 
 Laundromat owner can set the status a load of laundry as collected, processed, and on the way to be returned

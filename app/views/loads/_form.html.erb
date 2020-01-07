@@ -12,6 +12,13 @@
   <% end %>
 
   <div class="field">
+    <% @stores = Store.all %>
+    <%= form.label 'store_id' %><br />
+    <%= form.select :store_id, @stores.collect { |store| [store.address, store.id] } %>
+  
+  </div>
+
+  <div class="field">
     <%= form.label :pickup %>
     <%= form.datetime_select :pickup %>
   </div>

@@ -1,5 +1,6 @@
 class LoadsController < ApplicationController
   before_action :set_load, only: [:show, :edit, :update, :destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   # GET /loads
   # GET /loads.json
@@ -24,6 +25,7 @@ class LoadsController < ApplicationController
   # POST /loads
   # POST /loads.json
   def create
+    byebug
     @load = Load.new(load_params)
 
     respond_to do |format|
@@ -61,6 +63,11 @@ class LoadsController < ApplicationController
     end
   end
 
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:store_id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_load
@@ -69,6 +76,6 @@ class LoadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def load_params
-      params.require(:load).permit(:pickup, :weight, :paid, :status)
+      params.require(:load).permit(:pickup, :weight, :paid, :status, :store_id)
     end
 end
