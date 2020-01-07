@@ -21,14 +21,33 @@ class LoadsController < ApplicationController
   def edit
   end
 
+  def test
+    byebug
+    # @customer = User.find()
+    # Stripe::InvoiceItem.create({
+    #   customer: @customer.stripe_id,
+    #   amount: ,
+    #   currency: 'usd',
+    #   description: 'One-time setup fee',
+    # })
+
+    # invoice = Stripe::Invoice.create({
+    #   customer: 'cus_4fdAW5ftNQow1a',
+    #   auto_advance: true, # auto-finalize this draft after ~1 hour
+    # })
+    redirect_to loads_path
+  end
+
   # POST /loads
   # POST /loads.json
   def create
     @load = Load.new(load_params)
     @load.user_id = current_user.id
+    @customer = Stripe::Customer.create({email: current_user.email})
+    current_user.stripe_id = @customer.id
 
     respond_to do |format|
-      if @load.save
+      if (@load.save && current_user.save)
         format.html { redirect_to @load, notice: 'Load was successfully created.' }
         format.json { render :show, status: :created, location: @load }
       else
