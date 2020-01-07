@@ -18,9 +18,9 @@ Laundromat owner can enter details about their business including an address
 - [ ] add owner id to store table via migration. if owner id is in the store table as foreign key, show store. Otherwise show nothing
 
 Laundromat owner can enter their time availability for pickup
-
+- [x]
 User can select a laundromat and order a pickup
-- [ ] the new order page should have a form for submitting the order
+- [ ] user creates new load, owner edits load statuses
 
 Laundromat owner can set the status a load of laundry as collected, processed, and on the way to be returned
 

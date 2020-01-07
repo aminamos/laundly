@@ -23,20 +23,22 @@
     <%= form.datetime_select :pickup %>
   </div>
 
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.number_field :weight %>
-  </div>
+  <% if current_user.role_id == 1 %>
+    <div class="field">
+      <%= form.label :weight %>
+      <%= form.number_field :weight %>
+    </div>
 
-  <div class="field">
-    <%= form.label :paid %>
-    <%= form.check_box :paid %>
-  </div>
+    <div class="field">
+      <%= form.label :paid %>
+      <%= form.check_box :paid %>
+    </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
+    <div class="field">
+      <%= form.label :status %>
+      <%= form.text_field :status %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
