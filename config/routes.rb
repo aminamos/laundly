@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    
   }
+  post '/loads/test', to: 'loads#test', as: 'test'
   resources :availabilities
   resources :stores
   resources :loads
