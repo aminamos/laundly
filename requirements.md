@@ -10,31 +10,31 @@ For Stripe, go ahead and make an account controlled by an email you create like 
 
 
 Milestone #1
-x User can sign up as either a laundromat owner or a person seeking to have their laundry done
+[x] User can sign up as either a laundromat owner or a person seeking to have their laundry done
 
 Laundromat owner can enter details about their business including an address
-- if role id is not owner, hide the new store link
-- assuming each owner has one store. when creating a store, capture the owner id (owner has_many stores, store belongs_to owner)
-- if owner id is in the store id as foreign key, show (show, edit, destroy) links. Otherwise show nothing
+[] if role id is not owner, hide the new store link
+[] assuming each owner has one store. when creating a store, capture the owner id (owner has_many stores, store belongs_to owner)
+[] if owner id is in the store id as foreign key, show (show, edit, destroy) links. Otherwise show nothing
 
 Laundromat owner can enter their time availability for pickup
-- make store_availability table, columns store_id, availability_id
-- store has_many availabilities through above table, availability has_many stores through above table
-- make drop-down for the store that availability applies to
+[] make store_availability table, columns store_id, availability_id
+[] store has_many availabilities through above table, availability has_many stores through above table
+[] make drop-down for the store that availability applies to
 
 User can select a laundromat and order a pickup
-- new table: orders (columns = user_id, store_id, availability_id, weight, status=null, user phone number)
-- the new order page should have a form for submitting the order
+[] new table: orders (columns = user_id, store_id, availability_id, weight, status=null, user phone number)
+[] the new order page should have a form for submitting the order
 
 Laundromat owner can set the status a load of laundry as collected, processed, and on the way to be returned
-- make an order status table (status:string)
-- have a form to change order status
+[] make an order status table (status:string)
+[] have a form to change order status
 
 Laundromat owner can see all of processed and current loads of laundry
-- owner show page for store should show orders and order details for each store
+[] owner show page for store should show orders and order details for each store
 
 User can enter their phone number and laundromat owner can see it
-- 
+[]
 
 Milestone #2
 Laundromat owner can enter the weight of the load of laundry
