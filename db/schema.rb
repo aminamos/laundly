@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_054730) do
+ActiveRecord::Schema.define(version: 2020_01_07_124414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 2019_11_10_054730) do
     t.integer "weight"
     t.boolean "paid"
     t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "store_id"
+    t.index ["store_id"], name: "index_loads_on_store_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,4 +64,5 @@ ActiveRecord::Schema.define(version: 2019_11_10_054730) do
   end
 
   add_foreign_key "availabilities", "stores"
+  add_foreign_key "loads", "stores"
 end
