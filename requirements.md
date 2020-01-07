@@ -14,21 +14,19 @@ Milestone #1
 
 Laundromat owner can enter details about their business including an address
 - [x] if role id is not owner, hide the new store link
-- [ ] assuming each owner has one store. when creating a store, capture the owner id (owner has_many stores, store belongs_to owner)
-- [ ] add owner id to store table via migration. if owner id is in the store table as foreign key, show store. Otherwise show nothing
+- [x] assuming each owner can see all stores
+- [ ] TODO: if multiple owners, will need to add owner id to store table via migration. logic = if owner id is in the store table as foreign key, show store. Otherwise show nothing (owner should only see stores they own and manage). Also helps with Stripe integration
 
-Laundromat owner can enter their time availability for pickup
-- [x]
-User can select a laundromat and order a pickup
-- [x] user creates new load, owner edits load statuses
 
-Laundromat owner can set the status a load of laundry as collected, processed, and on the way to be returned
+- [x] Laundromat owner can enter their time availability for pickup
 
-Laundromat owner can see all of processed and current loads of laundry
-- [ ] owner show page for store should show orders and order details for each store
+- [x] User can select a laundromat and order a pickup
 
-User can enter their phone number and laundromat owner can see it
-- [x] 
+- [x] Laundromat owner can set the status a load of laundry as collected, processed, and on the way to be returned
+
+- [x] Laundromat owner can see all of processed and current loads of laundry
+
+- [x] User can enter their phone number and laundromat owner can see it
 
 Milestone #2
 Laundromat owner can enter the weight of the load of laundry
