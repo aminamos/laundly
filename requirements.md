@@ -20,7 +20,7 @@ Laundromat owner can enter details about their business including an address
 Laundromat owner can enter their time availability for pickup
 - [x]
 User can select a laundromat and order a pickup
-- [ ] user creates new load, owner edits load statuses
+- [x] user creates new load, owner edits load statuses
 
 Laundromat owner can set the status a load of laundry as collected, processed, and on the way to be returned
 
@@ -28,7 +28,7 @@ Laundromat owner can see all of processed and current loads of laundry
 - [ ] owner show page for store should show orders and order details for each store
 
 User can enter their phone number and laundromat owner can see it
-- [ ] 
+- [x] 
 
 Milestone #2
 Laundromat owner can enter the weight of the load of laundry

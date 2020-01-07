@@ -16,6 +16,7 @@
   <tbody>
     <% @loads.each do |load| %>
       <tr>
+        <td><%= load.store.address %></td>
         <td><%= load.pickup %></td>
         <td><%= load.weight %></td>
         <td><%= load.paid %></td>

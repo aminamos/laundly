@@ -25,6 +25,7 @@ class LoadsController < ApplicationController
   # POST /loads.json
   def create
     @load = Load.new(load_params)
+    @load.user_id = current_user.id
 
     respond_to do |format|
       if @load.save
@@ -69,6 +70,6 @@ class LoadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def load_params
-      params.require(:load).permit(:pickup, :weight, :paid, :status, :store_id, :user_phone)
+      params.require(:load).permit(:pickup, :weight, :paid, :status, :store_id, :user_phone, :user_id)
     end
 end

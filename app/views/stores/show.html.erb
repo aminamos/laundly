@@ -9,6 +9,70 @@
   <strong>Phone:</strong>
   <%= @store.phone %>
 </p>
+
+<div>
+
+<% @store.loads.each do |load|%>
+<% end %>
+<% if @not_done_array.size > 0 %>
+  <strong>Open or miscategorized orders:</strong>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Pickup</th>
+        <th>Weight</th>
+        <th>Customer Phone</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @store.loads.each do |load| %>
+        <% if load.status != "done"%>
+          <tr>
+            <td><%= load.pickup %></td>
+            <td align="center"><%= load.weight %></td>
+            <td><%= load.user_phone %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <p><%= "No current open orders" %></p>
+<% end %>
+</div>
+
+<div>
+<% if @store.loads.size > 0%>
+  <strong>Processed orders:</strong>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Pickup</th>
+        <th>Weight</th>
+        <th>Customer Phone</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @store.loads.each do |load| %>
+        <% if load.status == "done"%>
+          <tr>
+            <td><%= load.pickup %></td>
+            <td align="center"><%= load.weight %></td>
+            <td><%= load.user_phone %></td>
+          </tr>
+        <%end%>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <p><%= "No processed orders" %></p>
+<% end %>
+</div>
+
 <% if @user.role_id == 1 %>
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <% end %>

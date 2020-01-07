@@ -12,6 +12,7 @@ class StoresController < ApplicationController
   # GET /stores/1.json
   def show
     @user = current_user
+    @not_done_array = []
   end
 
   # GET /stores/new

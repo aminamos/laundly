@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_07_131101) do
+ActiveRecord::Schema.define(version: 2020_01_07_135051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(version: 2020_01_07_131101) do
     t.datetime "updated_at", null: false
     t.bigint "store_id"
     t.string "user_phone"
+    t.bigint "user_id"
     t.index ["store_id"], name: "index_loads_on_store_id"
+    t.index ["user_id"], name: "index_loads_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -66,4 +68,5 @@ ActiveRecord::Schema.define(version: 2020_01_07_131101) do
 
   add_foreign_key "availabilities", "stores"
   add_foreign_key "loads", "stores"
+  add_foreign_key "loads", "users"
 end
