@@ -16,7 +16,7 @@
   <tbody>
     <% @availabilities.each do |availability| %>
       <tr>
-        <td><%= availability.store %></td>
+        <td><%= availability.store.address %></td>
         <td><%= availability.day_of_week %></td>
         <td><%= availability.start_time %></td>
         <td><%= availability.end_time %></td>
