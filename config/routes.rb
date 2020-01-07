@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :roles
+  # resources :homes, only: [:index]
+  get '/', to: 'homes#index', as: 'index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
