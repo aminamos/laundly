@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Stores</h1>
@@ -17,13 +18,16 @@
         <td><%= store.address %></td>
         <td><%= store.phone %></td>
         <td><%= link_to 'Show', store %></td>
+        <% if @user.role_id == 1%>
         <td><%= link_to 'Edit', edit_store_path(store) %></td>
         <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if @user.role_id == 1%>
 <%= link_to 'New Store', new_store_path %>
+<% end %>

@@ -5,11 +5,13 @@ class StoresController < ApplicationController
   # GET /stores.json
   def index
     @stores = Store.all
+    @user = current_user
   end
 
   # GET /stores/1
   # GET /stores/1.json
   def show
+    @user = current_user
   end
 
   # GET /stores/new

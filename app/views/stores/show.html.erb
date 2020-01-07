@@ -9,6 +9,7 @@
   <strong>Phone:</strong>
   <%= @store.phone %>
 </p>
-
+<% if @user.role_id == 1 %>
 <%= link_to 'Edit', edit_store_path(@store) %> |
+<% end %>
 <%= link_to 'Back', stores_path %>

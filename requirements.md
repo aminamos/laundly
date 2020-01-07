@@ -10,12 +10,12 @@ For Stripe, go ahead and make an account controlled by an email you create like 
 
 
 Milestone #1
-- [ ] User can sign up as either a laundromat owner or a person seeking to have their laundry done
+- [x] User can sign up as either a laundromat owner or a person seeking to have their laundry done
 
 Laundromat owner can enter details about their business including an address
-- [ ] if role id is not owner, hide the new store link
+- [x] if role id is not owner, hide the new store link
 - [ ] assuming each owner has one store. when creating a store, capture the owner id (owner has_many stores, store belongs_to owner)
-- [ ] if owner id is in the store id as foreign key, show (show, edit, destroy) links. Otherwise show nothing
+- [ ] add owner id to store table via migration. if owner id is in the store table as foreign key, show store. Otherwise show nothing
 
 Laundromat owner can enter their time availability for pickup
 - [ ] make store_availability table, columns store_id, availability_id

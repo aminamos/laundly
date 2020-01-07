@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/', to: 'homes#index', as: 'index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    
   }
   resources :availabilities
   resources :stores
