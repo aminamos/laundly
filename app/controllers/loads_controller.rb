@@ -26,9 +26,15 @@ class LoadsController < ApplicationController
   def create
     @load = Load.new(load_params)
     @load.user_id = current_user.id
+    @customer = Stripe::Customer.create({
+      name: `#{current_user.email}`,
+      email: `#{current_user.email}`
+    })
+
+    current_user.stripe_id = @customer.id
 
     respond_to do |format|
-      if @load.save
+      if (@load.save && current_user.save)
         format.html { redirect_to @load, notice: 'Load was successfully created.' }
         format.json { render :show, status: :created, location: @load }
       else
