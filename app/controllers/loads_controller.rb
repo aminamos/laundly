@@ -22,19 +22,24 @@ class LoadsController < ApplicationController
   end
 
   def test
-    byebug
-    # @customer = User.find()
-    # Stripe::InvoiceItem.create({
-    #   customer: @customer.stripe_id,
-    #   amount: ,
-    #   currency: 'usd',
-    #   description: 'One-time setup fee',
-    # })
+    @load = Load.find(request.env['HTTP_REFERER'].split('/')[-1])
+    @customer = @load.user
+    Stripe::InvoiceItem.create({
+      customer: @customer.stripe_id,
+      amount: (@load.weight * 100),
+      currency: 'usd',
+      description: 'laundly fee'
+    })
 
-    # invoice = Stripe::Invoice.create({
-    #   customer: 'cus_4fdAW5ftNQow1a',
-    #   auto_advance: true, # auto-finalize this draft after ~1 hour
-    # })
+    invoice = Stripe::Invoice.create({
+      customer: @customer.stripe_id,
+      auto_advance: true
+    })
+
+    @load.amount_due = invoice.amount_due / 100
+    @load.invoice_id = invoice.id
+    @load.save
+    byebug
     redirect_to loads_path
   end
 
