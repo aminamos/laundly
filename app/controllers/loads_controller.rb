@@ -5,6 +5,7 @@ class LoadsController < ApplicationController
   # GET /loads.json
   def index
     @loads = Load.all
+    # @inv = Stripe::Invoice.retrieve(Load.find(9).invoice_id)
   end
 
   # GET /loads/1
@@ -39,7 +40,6 @@ class LoadsController < ApplicationController
     @load.amount_due = invoice.amount_due / 100
     @load.invoice_id = invoice.id
     @load.save
-    byebug
     redirect_to loads_path
   end
 

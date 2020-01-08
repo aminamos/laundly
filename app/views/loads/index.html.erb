@@ -5,10 +5,13 @@
 <table>
   <thead>
     <tr>
+      <th>Address</th>
       <th>Pickup</th>
       <th>Weight</th>
       <th>Paid</th>
       <th>Status</th>
+      <th>amt due</th>
+      <th>amt paid</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,16 +19,37 @@
   <tbody>
     <% @loads.each do |load| %>
       <tr>
-        <td><%= load.store.address %></td>
-        <td><%= load.pickup %></td>
-        <td><%= load.weight %></td>
-        <td><%= load.paid %></td>
-        <td><%= load.status %></td>
-        <td><%= Load.find(load.id).invoice %></td>
-        <td><%= link_to 'Show', load %></td>
-        <td><%= link_to 'Edit', edit_load_path(load) %></td>
-        <% if current_user.role_id == 1%>
-        <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if load.invoice_id == nil %>
+          <% load.amount_due = 0 %>
+          <% load.amount_paid = 0 %>
+          <td><%= load.store.address %></td>
+          <td><%= load.pickup %></td>
+          <td><%= load.weight %></td>
+          <td><%= load.paid %></td>
+          <td><%= load.status %></td>
+          <td><%= load.amount_due %></td>
+          <td><%= load.amount_paid %></td>
+          <td><%= link_to 'Show', load %></td>
+          <td><%= link_to 'Edit', edit_load_path(load) %></td>
+          <% if current_user.role_id == 1%>
+          <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        <% else %>
+          <% @inv = Stripe::Invoice.retrieve(load.invoice_id)%>
+          <% load.amount_due = 0 %>
+          <% load.amount_paid = 0 %>
+          <td><%= load.store.address %></td>
+          <td><%= load.pickup %></td>
+          <td><%= load.weight %></td>
+          <td><%= load.paid %></td>
+          <td><%= load.status %></td>
+          <td><%= @inv.amount_due/100 %></td>
+          <td><%= @inv.amount_paid/100 %></td>
+          <td><%= link_to 'Show', load %></td>
+          <td><%= link_to 'Edit', edit_load_path(load) %></td>
+          <% if current_user.role_id == 1%>
+          <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         <% end %>
         </td>
       </tr>
