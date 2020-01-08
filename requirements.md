@@ -34,11 +34,12 @@ User can enter their credit card details into Stripe.
 Use the gem Geocodr and Bing Maps API (has more API calls) to allow the user to filter laundromats within 25 or 50 miles.
 - [ ] 
 Find either an open-source logo for the business (like a cartoon laundry machine? But still professional) or try to get one made off of fiverr, $10/budget for that
-- [x] <div>Icons made by <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">xnimrodx</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+- [x] Credit for the logo in app/assets/images: <div>Icons made by <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">xnimrodx</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 Customer can see history of loads/stripe payment
-- [ ]
+- [x]
 Owner can see history of loads/stripe payment
-- [ ] 
+- [x] 
 
 For the signup flow, I really want it to look like:
 
