@@ -4,10 +4,7 @@ https://github.com/mdonagh/laundly/
 
 A friend of mine owns a laundromat and wants to make an app that will allow him to schedule home laundry pickup for his customers, hopefully offering this platform as a Saas product to other laundromats in the area. If we actually get traction for this, we could also switch to Rails API/React Native mobile app.
 
-I'll pay you $30 for completing each of the two milestones below.
-
 For Stripe, go ahead and make an account controlled by an email you create like laundly@gmail.com (or similar), Stripe has test credentials that are really easy to use. I'm not sure how to manage the Stripe platform so that we can send the money to different owner users
-
 
 Milestone #1
 - [x] User can sign up as either a laundromat owner or a person seeking to have their laundry done
@@ -16,7 +13,6 @@ Laundromat owner can enter details about their business including an address
 - [x] if role id is not owner, hide the new store link
 - [x] assuming each owner can see all stores
 - [ ] TODO: if multiple owners, will need to add owner id to store table via migration. logic = if owner id is in the store table as foreign key, show store. Otherwise show nothing (owner should only see stores they own and manage). Also helps with Stripe integration
-
 
 - [x] Laundromat owner can enter their time availability for pickup
 
@@ -32,17 +28,18 @@ Milestone #2
 - [x] Laundromat owner can enter the weight of the load of laundry
 
 Laundromat owner can charge a user for the load of laundry via Stripe
-- [ ] 
+- [x] 
 User can enter their credit card details into Stripe.
-- [ ] 
+- [x] 
 Use the gem Geocodr and Bing Maps API (has more API calls) to allow the user to filter laundromats within 25 or 50 miles.
 - [ ] 
 Find either an open-source logo for the business (like a cartoon laundry machine? But still professional) or try to get one made off of fiverr, $10/budget for that
-- [x] <div>Icons made by <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">xnimrodx</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+- [x] Credit for the logo in app/assets/images: <div>Icons made by <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">xnimrodx</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 Customer can see history of loads/stripe payment
-- [ ]
+- [x]
 Owner can see history of loads/stripe payment
-- [ ] 
+- [x] 
 
 For the signup flow, I really want it to look like:
 
